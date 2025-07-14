@@ -1,69 +1,64 @@
-# React + TypeScript + Vite
+# Foursales Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a user management application developed as a technical challenge for Foursales. It demonstrates skills in React, Redux, Redux-Saga, TypeScript, and styled-components, with a clean and modular architecture.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- List and search users with debounce
+- Favorite/unfavorite users
+- View detailed user information
+- Fast navigation with React Router
+- Global state management with Redux Toolkit
+- Side effects handled via Redux-Saga
+- Fully styled with styled-components
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React**
+- **TypeScript**
+- **Redux Toolkit**
+- **Redux-Saga**
+- **Styled-components**
+- **React Router DOM**
+- **Lodash.debounce**
+- **JSONPlaceholder API** (mock data)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Project Structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── api/             # API service abstraction
+├── assets/          # Static files like logos and icons
+├── components/      # Reusable UI components
+├── features/        # Redux slices and sagas for users & favorites
+├── hooks/           # Custom React hooks
+├── pages/           # Main views (Home, Favorites, UserDetails)
+├── styles/          # Global and component-level styles
+├── types/           # TypeScript type definitions
+├── store/           # Redux store setup
+└── App.tsx          # Application root
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (LTS version)
+- npm or yarn
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/LucasPirolli/challenge_foursales
+cd challenge_foursales
+
+# 2. Install dependencies
+npm install
+
+# 3. Run the application
+npm run dev
 ```
+
+_Challenge completed with attention to code quality, scalability, and modern React architecture._
+
